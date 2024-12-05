@@ -1,0 +1,48 @@
+# Build Folders
+bin/
+obj/
+
+# Visual Studio Files
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider Files
+.idea/
+
+# Windows Files
+Thumbs.db
+desktop.ini
+
+# OSX Files
+.DS_Store
+
+# Logs
+*.log
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+
+# Configuration Files
+appsettings.json
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Dependency Directories
+node_modules/
+
+# Debug & Release
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]64/
+
+# Lock Files
+*.lock
