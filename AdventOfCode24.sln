@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4_CeresSearch", "Day4_Ce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5_PrintQueue", "Day5_PrintQueue\Day5_PrintQueue.csproj", "{561D81DC-3A2F-4610-A0E7-4F197208D228}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6_GuardGallivant", "Day6_GuardGallivant\Day6_GuardGallivant.csproj", "{8F5811D4-CC1C-4940-BD00-A76302E22D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{10BF3487-3E0B-4D8C-8F94-7BFB6A62D5BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{561D81DC-3A2F-4610-A0E7-4F197208D228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{561D81DC-3A2F-4610-A0E7-4F197208D228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{561D81DC-3A2F-4610-A0E7-4F197208D228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5811D4-CC1C-4940-BD00-A76302E22D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5811D4-CC1C-4940-BD00-A76302E22D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5811D4-CC1C-4940-BD00-A76302E22D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5811D4-CC1C-4940-BD00-A76302E22D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10BF3487-3E0B-4D8C-8F94-7BFB6A62D5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BF3487-3E0B-4D8C-8F94-7BFB6A62D5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BF3487-3E0B-4D8C-8F94-7BFB6A62D5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BF3487-3E0B-4D8C-8F94-7BFB6A62D5BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

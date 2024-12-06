@@ -5,20 +5,15 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Day4_AdventOfCode24</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <None Update="Day4_CeresSearch_Part1_Input.txt">
+      <None Update="Day6_GuardGallivant_Info.md">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Day4_CeresSearch_Part2_Input.txt">
+      <None Update="Day6_GuardGallivant_Example_Input.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Helpers\Helpers.csproj" />
     </ItemGroup>
 
 </Project>

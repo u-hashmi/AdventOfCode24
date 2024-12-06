@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using Day5_PrintQueue.Classes;
+using Helpers;
 
 namespace Day5_PrintQueue;
 
@@ -8,8 +9,8 @@ public static class Program
 {
     public static void Main()
     {
-        const string printQueueFileName = "Day5_PrintQueue_Part2_Input.txt";
-        var printSections = GetPrintSections(ReadFromFile(printQueueFileName));
+        var printQueueFileName = new FilePathRecord("Day5_PrintQueue_Part2_Input.txt");
+        var printSections = GetPrintSections(printQueueFileName.ReadFromFile());
         var validLines = GetCorrectRules(printSections);
         var invalidLines = GetIncorrectRules(printSections);
         var fixedLines = CorrectIncorrectUpdates(printSections, invalidLines);
@@ -21,19 +22,6 @@ public static class Program
         PrintRules(fixedLines);
         Console.WriteLine($"Sum of valid print updates: {GetSumOfMiddles(validLines)}");
         Console.WriteLine($"Sum of fixed print updates: {GetSumOfMiddles(fixedLines)}");
-    }
-
-    private static string[] ReadFromFile(string filePath)
-    {
-        try
-        {
-            return File.ReadAllLines(filePath);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error reading file: {ex.Message}");
-            return Array.Empty<string>();
-        }
     }
 
     private static PrintSections GetPrintSections(string[] fileContents)
@@ -56,31 +44,11 @@ public static class Program
         return printSections;
     }
 
-    #region Rules
-
-    //Rule 1 
     private static List<string> GetCorrectRules(PrintSections printSections)
     {
         if (printSections.OrderingRulesSection.Count == 0 || printSections.UpdatingRulesSection.Count == 0)
             return null!;
-        
-        return (
-            from
-                printRules in printSections.UpdatingRulesSection
-            where
-                printRules.Trim() != string.Empty
-                let positions = printRules.Split(',').ToList()
-                let allRulesValid = printSections.OrderingRulesSection.Select(printOrder => printOrder.Split("|"))
-                .All(numbersSplit => !positions.Contains(numbersSplit[0]) || !positions.Contains(numbersSplit[1]) || positions.IndexOf(numbersSplit[0]) < positions.IndexOf(numbersSplit[1]))
-            where allRulesValid
-            select printRules).ToList();
-    }
-    
-    private static List<string> GetIncorrectRules(PrintSections printSections)
-    {
-        if (printSections.OrderingRulesSection.Count == 0 || printSections.UpdatingRulesSection.Count == 0)
-            return null!;
-        
+
         return (
             from
                 printRules in printSections.UpdatingRulesSection
@@ -88,7 +56,26 @@ public static class Program
                 printRules.Trim() != string.Empty
             let positions = printRules.Split(',').ToList()
             let allRulesValid = printSections.OrderingRulesSection.Select(printOrder => printOrder.Split("|"))
-                .All(numbersSplit => !positions.Contains(numbersSplit[0]) || !positions.Contains(numbersSplit[1]) || positions.IndexOf(numbersSplit[0]) < positions.IndexOf(numbersSplit[1]))
+                .All(numbersSplit => !positions.Contains(numbersSplit[0]) || !positions.Contains(numbersSplit[1]) ||
+                                     positions.IndexOf(numbersSplit[0]) < positions.IndexOf(numbersSplit[1]))
+            where allRulesValid
+            select printRules).ToList();
+    }
+
+    private static List<string> GetIncorrectRules(PrintSections printSections)
+    {
+        if (printSections.OrderingRulesSection.Count == 0 || printSections.UpdatingRulesSection.Count == 0)
+            return null!;
+
+        return (
+            from
+                printRules in printSections.UpdatingRulesSection
+            where
+                printRules.Trim() != string.Empty
+            let positions = printRules.Split(',').ToList()
+            let allRulesValid = printSections.OrderingRulesSection.Select(printOrder => printOrder.Split("|"))
+                .All(numbersSplit => !positions.Contains(numbersSplit[0]) || !positions.Contains(numbersSplit[1]) ||
+                                     positions.IndexOf(numbersSplit[0]) < positions.IndexOf(numbersSplit[1]))
             where !allRulesValid
             select printRules).ToList();
     }
@@ -111,7 +98,7 @@ public static class Program
 
         return correctedUpdates;
     }
-    
+
     private static List<string> TopologicalSort(List<string> positions, List<string> orderingRules)
     {
         // Parse ordering rules into a dependency graph
@@ -169,15 +156,14 @@ public static class Program
 
     private static int GetSumOfMiddles(List<string> validLines) => (
         from line in validLines
-        select line.Split(",") into splitArray 
-        let middleIndex = splitArray.Length / 2 
+        select line.Split(",")
+        into splitArray
+        let middleIndex = splitArray.Length / 2
         select int.Parse(splitArray[middleIndex])).Sum();
 
     private static void PrintRules(List<string> validLines)
     {
-        foreach (var printRule in validLines) 
+        foreach (var printRule in validLines)
             Console.WriteLine(printRule);
     }
-
-    #endregion
 }

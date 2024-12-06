@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Source\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Update="Day5_PrintQueue_Part1_Input.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
@@ -21,6 +17,10 @@
       <None Update="Day5_PrintQueue_Part2_Input.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Helpers\Helpers.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Day4_AdventOfCode24.Source;
+using Helpers;
 
 namespace Day4_AdventOfCode24;
 
@@ -6,11 +7,11 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        const string filePath = "Day4_CeresSearch_Part2_Input.txt";
-        const string part2FilePath = "Day4_CeresSearch_Part2_Input.txt";
+        var part1FilePath = new FilePathRecord("Day4_CeresSearch_Part2_Input.txt");
+        var part2FilePath = new FilePathRecord("Day4_CeresSearch_Part2_Input.txt");
 
-        var grid1 = ReadGridFromFile(filePath);
-        var grid2 = ReadGridFromFile(part2FilePath);
+        var grid1 = part1FilePath.ReadFromFile();
+        var grid2 = part2FilePath.ReadFromFile();
 
         if (grid1.Length == 0 || grid2.Length == 0)
         {
@@ -23,18 +24,5 @@ public static class Program
         var xmasPatternCount = WordFinder.CountWordOccurrences(grid1, "XMAS");
         Console.WriteLine($"Xmas pattern count: {xmasPatternCount}");
         Console.WriteLine($"Xmas diagonal pattern count: {xmasDiagonalPatternCount}");
-    }
-
-    private static string[] ReadGridFromFile(string filePath)
-    {
-        try
-        {
-            return File.ReadAllLines(filePath);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error reading file: {ex.Message}");
-            return Array.Empty<string>();
-        }
     }
 }
