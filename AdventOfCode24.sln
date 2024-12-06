@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4_CeresSearch", "Day4_CeresSearch\Day4_CeresSearch.csproj", "{E2C72509-09F7-4466-B1CC-84F4C51A069D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5_PrintQueue", "Day5_PrintQueue\Day5_PrintQueue.csproj", "{561D81DC-3A2F-4610-A0E7-4F197208D228}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{E2C72509-09F7-4466-B1CC-84F4C51A069D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2C72509-09F7-4466-B1CC-84F4C51A069D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2C72509-09F7-4466-B1CC-84F4C51A069D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{561D81DC-3A2F-4610-A0E7-4F197208D228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561D81DC-3A2F-4610-A0E7-4F197208D228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561D81DC-3A2F-4610-A0E7-4F197208D228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561D81DC-3A2F-4610-A0E7-4F197208D228}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

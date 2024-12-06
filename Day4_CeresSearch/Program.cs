@@ -24,8 +24,8 @@ public static class Program
         Console.WriteLine($"Xmas pattern count: {xmasPatternCount}");
         Console.WriteLine($"Xmas diagonal pattern count: {xmasDiagonalPatternCount}");
     }
-    
-    public static string[] ReadGridFromFile(string filePath)
+
+    private static string[] ReadGridFromFile(string filePath)
     {
         try
         {
