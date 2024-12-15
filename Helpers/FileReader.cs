@@ -14,4 +14,13 @@ public static class FileReader
             return Array.Empty<string>();
         }
     }
+
+    public static void PrintFileData(this FilePathRecord filePath)
+    {
+        var fileData = filePath.ReadFromFile();
+        foreach (var line in fileData)
+        {
+            Console.WriteLine(line);
+        }
+    }
 }
